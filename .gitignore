@@ -1,0 +1,33 @@
+# Android / Gradle
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/captures/
+android/.cxx/
+android/*/build/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 秘密鍵・署名鍵・実データは絶対に含めない
+*.jks
+*.keystore
+.env
+*.env
+google-services.json
+
+# Kotlin compiler の作業ディレクトリ(ビルド生成物)
+android/.kotlin/
+
+# 署名鍵の設定(パスワードを含む)
+android/keystore.properties
+
+# 配布用に作ったAPK(リポジトリには入れない)
+dist/

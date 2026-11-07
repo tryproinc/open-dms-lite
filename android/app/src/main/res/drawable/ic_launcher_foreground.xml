@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Open DMS Lite のアイコン: 検知枠(角のブラケット)の中に目。上まぶたに顔の点(メッシュ)の気配を添える。
+    図形はすべてアダプティブアイコンの安全域(中央66dp)に収めてある。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:strokeColor="#C6FF00"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M30,39 L30,30 L39,30" />
+    <path
+        android:strokeColor="#C6FF00"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M69,30 L78,30 L78,39" />
+    <path
+        android:strokeColor="#C6FF00"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M30,69 L30,78 L39,78" />
+    <path android:fillColor="#C6FF00" android:fillAlpha="0.85" android:pathData="M38.7,38.6 a1.3,1.3 0 1,0 2.6,0 a1.3,1.3 0 1,0 -2.6,0 Z" />
+    <path android:fillColor="#C6FF00" android:fillAlpha="0.85" android:pathData="M45.7,35.6 a1.3,1.3 0 1,0 2.6,0 a1.3,1.3 0 1,0 -2.6,0 Z" />
+    <path android:fillColor="#C6FF00" android:fillAlpha="0.85" android:pathData="M52.7,34.6 a1.3,1.3 0 1,0 2.6,0 a1.3,1.3 0 1,0 -2.6,0 Z" />
+    <path android:fillColor="#C6FF00" android:fillAlpha="0.85" android:pathData="M59.7,35.6 a1.3,1.3 0 1,0 2.6,0 a1.3,1.3 0 1,0 -2.6,0 Z" />
+    <path android:fillColor="#C6FF00" android:fillAlpha="0.85" android:pathData="M66.7,38.6 a1.3,1.3 0 1,0 2.6,0 a1.3,1.3 0 1,0 -2.6,0 Z" />
+    <path
+        android:strokeColor="#E8F5E9"
+        android:strokeWidth="3"
+        android:strokeLineJoin="round"
+        android:pathData="M30,54 C38,40.5 70,40.5 78,54 C70,67.5 38,67.5 30,54 Z" />
+    <path android:pathData="M44.6,54 a9.4,9.4 0 1,0 18.8,0 a9.4,9.4 0 1,0 -18.8,0 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="44" android:startY="43"
+                android:endX="64" android:endY="65"
+                android:type="linear">
+                <item android:offset="0" android:color="#B9F6CA" />
+                <item android:offset="1" android:color="#22A55B" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path android:fillColor="#04211A" android:pathData="M49.8,54 a4.2,4.2 0 1,0 8.4,0 a4.2,4.2 0 1,0 -8.4,0 Z" />
+    <path android:fillColor="#FFFFFF" android:pathData="M55.4,50.8 a1.6,1.6 0 1,0 3.2,0 a1.6,1.6 0 1,0 -3.2,0 Z" />
+    <path android:fillColor="#C6FF00" android:pathData="M62,71 a9,9 0 1,0 18,0 a9,9 0 1,0 -18,0 Z" />
+    <path android:fillColor="#04211A" android:pathData="M67.8,65.5 L70.6,65.5 L70.6,73.6 L74.6,73.6 L74.6,76.3 L67.8,76.3 Z" />
+</vector>

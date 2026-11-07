@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+      11_DAY_SMARTPHONE_MVP_PLAN.md 3.2: 前面カメラでの解析が必須のため、
+      前面カメラを持たない端末はGoogle Playでインストール対象外にする(required=true)。
+    -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera.any" android:required="true" />
+    <uses-feature android:name="android.hardware.camera.front" android:required="true" />
+
+    <!-- 11_DAY_SMARTPHONE_MVP_PLAN.md 3.6: 閉眼/脇見/監視不能の警告振動に使う。通常権限。 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!--
+        車速だけを取得して脇見・スマホ判定の速度ゲートに使う(信号待ち・休憩・積卸し中の誤報を消すため)。
+        緯度経度は保持・記録しない(SpeedProviderのKDoc、および
+        docs/06_PRIVACY_SECURITY_OPERATIONS.md「GPS座標: MVP既定では不要 / 永続化しない」を参照)。
+        権限が無い/拒否された場合も監視は継続する(速度ゲートを開いたままにする)。
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!--
+        Android 12以降はFINEを要求する場合COARSEも宣言する必要があり、利用者はCOARSEだけを
+        許可することもできる。COARSEだけではGPS_PROVIDERを使えず速度が取れないが、その場合は
+        速度がnullのままになり速度ゲートが開いたままになるだけで、監視は従来どおり継続する
+        (SpeedProviderのKDoc「速度が取れないとき」を参照)。
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+
+    <!--
+        本アプリはネットワーク通信をしない(画像・個人データを端末外へ出さない方針)。
+        依存ライブラリのマニフェストが宣言するINTERNETを、統合時に取り除く。
+    -->
+    <uses-permission android:name="android.permission.INTERNET" tools:node="remove" />
+
+    <application
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.OpenDms">
+        <!--
+          11_DAY_SMARTPHONE_MVP_PLAN.md 3.7 / 06_PRIVACY_SECURITY_OPERATIONS.md:
+          画像・個人データを端末外へ出さない方針のため allowBackup=false とし、
+          dataExtractionRules/fullBackupContent でクラウドバックアップ・転送からも除外する。
+        -->
+        <!--
+            docs/18 §14-15: PiP(小窓)を許可する。ナビ等を前面に出しながら解析と警告を続けるため。
+            設定で既定OFF([DayMvpSettings.pictureInPictureEnabled])。
+
+            configChanges が**必須**。これが無いとPiPへの出入りでActivityが再生成され、
+            カメラとMediaPipeが作り直されて解析が途切れる(SIGSEGVの前例もある経路なので避ける)。
+        -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:supportsPictureInPicture="true"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboardHidden"
+            android:theme="@style/Theme.OpenDms">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,50 @@
+name: 不具合の報告
+description: 動作がおかしいとき。顔の写った画像・動画や、位置情報を含む CSV は載せないでください
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Issue は誰でも読めます。** 顔の写った画像・動画、位置情報を含む CSV、運転者や車両を特定できる情報は載せないでください。
+        検知の漏れや誤報があっても、運転の責任は運転者にあります。眠気を感じたら休憩してください。
+  - type: input
+    id: device
+    attributes:
+      label: 端末の機種と Android の版
+      placeholder: 例) Nothing Phone (2a) / Android 15
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: アプリの版
+      description: 前検査の画面の「このアプリについて」に出ます
+      placeholder: 例) 0.1.0-lite
+    validations:
+      required: true
+  - type: dropdown
+    id: source
+    attributes:
+      label: 入手元
+      options:
+        - Google Play
+        - APK(GitHub Releases・製品ページ)
+        - 自分でビルド
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 起きたことと、期待したこと
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 再現の手順
+      placeholder: 1. … 2. …
+  - type: textarea
+    id: conditions
+    attributes:
+      label: そのときの条件
+      description: 明るさ、マスクやサングラスの有無、端末の固定位置、車速など

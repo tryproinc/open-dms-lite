@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 画像・顔特徴量・較正値等の個人データを端末外バックアップへ含めない (06_PRIVACY_SECURITY_OPERATIONS.md) -->
+<full-backup-content>
+</full-backup-content>

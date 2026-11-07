@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Compose + Material3 を使うため、XMLテーマはウィンドウ背景等の最小限にとどめる。 -->
+    <style name="Theme.OpenDms" parent="android:Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">@android:color/black</item>
+    </style>
+</resources>
